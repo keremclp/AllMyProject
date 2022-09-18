@@ -6,29 +6,42 @@
 }
 
 body{
-    background: url(./pexels-pixabay-531880.jpg)   no-repeat center center/cover;    
+    background: url(./pexels-stefan-stefancik-919606.jpg)   no-repeat center center/cover ;    
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 
 .projects{
     width: 100vw;
-    background-color: white;
+    background-color: var(--background-color);
     padding: 3rem;
-    border-radius: 2rem;
-    box-shadow: 0 0 3px black;
 }
 .projects .projects-title{
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    
+    background-color: rgb(5, 34, 42);
+    color:rgb(236, 249, 255) ;
+    
     margin-bottom: 3rem;
     text-align: center;
+    
+    letter-spacing: 1.5rem;
+    border: 1px solid rgb(5, 34, 42);
+    border-radius: 1rem;
 }
+
 
 
 .projects .projects-list{
     display: flex;
-    flex-direction: row;
 }
 
 .projects .projects-list .project{
@@ -38,13 +51,16 @@ body{
     border: 1px solid black;
     border-radius: 1rem;
     box-shadow: 0 0 3px black;
-    cursor: pointer;
 }
 
+.projects .projects-list .project:hover{
+    transform: scale(1.1);
+    transition: .5s;
+    background-color:  rgb(236, 249, 255);
+}
 .projects .projects-list .project .source{
-
+    cursor: pointer;
     border-bottom: 1px solid #000;
-    position: relative;
 }
 .projects .projects-list .project .source::after{
     content: '+';
@@ -69,3 +85,13 @@ body{
     height: 10rem;
 }
 
+.projects .projects-list .project.clicked .source{
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+.projects .projects-list .project.clicked .source::after{
+    content: '-';
+    position: relative;
+    margin-left: 14rem;
+}
